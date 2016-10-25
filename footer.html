@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美食天下_最大的原创美食社区</title>
+		<meta name="keywords" content="最大的原创美食社区,美食天下">
+		<meta name="description" content="美食天下_最大的原创美食社区,美食天下手机版">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
+		<style type="text/css">
+			
+		</style>
+		<link rel="apple-touch-icon" href="http://static.meishichina.com/v6/img/wap_a/fav.png">
+		<link rel="stylesheet" type="text/css" href="footer/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="footer/footer.css"/>
+		<script src="footer/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="footer/angular-css.js" type="text/javascript" charset="utf-8"></script>
+		<script src="footer/angular-route.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-app="myApp">
+		<div class="container" ></div>
+		<footer >
+			<ul>
+				<li><a href="#/"><span class="li_sp1"></span><p>菜谱</p></a></li>
+				<li><a href="#/huati"><span class="li_sp2"></span><p>话题</p></a></li>
+				<li><a href="#/zhenxuan"><span class="li_sp3"></span><p>珍选</p></a></li>
+				<li><a href="#/wode"><span class="li_sp4"></span><p>我的</p></a></li>
+			</ul>
+		</footer>
+		<div ng-view></div>
+	</body>
+	<script type="text/javascript">
+		
+		var app = angular.module('myApp', ['ngRoute', 'angularCSS']);
+		
+		app.config(['$routeProvider', function ($routeProvider){
+			$routeProvider
+			.when('/', {
+				templateUrl: './caipu/htmls/caipu.html'
+			})
+			.when('/huati', {
+				templateUrl: './caipu/htmls/huati.html'
+			})
+			.when('/zhenxuan', {
+				templateUrl: './caipu/htmls/zhenxuan.html'
+			})
+			.when('/wode', {
+				templateUrl: './caipu/htmls/wode.html'
+			})
+			.otherwise('/', {
+				templateUrl: './caipu/htmls/caipu.html'
+			})
+		}]);
+	</script>
+</html>
